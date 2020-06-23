@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Scheduler List</title>
+</head>
+<body>
+  <h3>All of the schedulers:</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Date added</th>
+    </tr>
+    <div th:each="scheduler:${schedulers}">
+      <tr>
+        <td th:text="${scheduler.Id}"></td>
+        <td th:text="${scheduler.firstName}"></td>
+        <td th:text="${scheduler.lastName}"></td>
+        <td th:text="${scheduler.areaCode}"></td>
+        <td th:text="${scheduler.contactTel}"></td>
+        <td th:text="${scheduler.prefferedContactMethod}"></td>
+        <td th:text="${scheduler.mayWeContactYou}"></td>
+        <td th:text="${scheduler.additionalInformation}"></td>
+      </tr>
+    </div>
+  </table>
+  <a href="/">Add a scheduler</a>
+</body>
+</html>

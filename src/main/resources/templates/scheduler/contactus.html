@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang=en>
+
+<head>
+<!-- Required meta tags always come first -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Amina Cleaning: cleaning services that you deserve</title>
+<link th:replace="scheduler/fragments/headLinks">
+</head>
+
+<body>
+
+	<header class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Acleaning</h1>
+					<h2>Cleaning that you deserve</h2>
+				</div>
+				<div class="col-5">
+					<h2>
+						<i class="fa fa-phone fa-lg text-primary"></i>Tel: 1-619-895-7484<br />
+					</h2>
+				</div>
+			</div>
+		</div>
+	</header>
+<div th:replace="scheduler/fragments/navbar"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Contact</li>
+				</ol>
+				<h2>Contact Us</h2>
+				<hr />
+			</div>
+		</div>
+
+		<div class="row row-content align-items-center">
+			<div class="col-sm-4">
+				<h5>Our Address</h5>
+				<address>
+					1011 43 1/2 street South<br /> Fargo, ND 58103<br /> U.S.A.
+				</address>
+			</div>
+			<div class="col">
+				<i class="fa fa-phone"></i> 1-619-895-7484<br> <i
+					class="fa fa-envelope-o"></i> ture.amina@gmail.com
+			</div>
+		</div>
+
+		<div class="row row-content">
+			<div class="col-12">
+				<h2>Reach out to us</h2>
+				<hr />
+			</div>
+			<div class="col-md-10">
+				<form action="#" th:action="@{/}" th:object="${scheduler}"
+					method="post">
+					<div class="form-group row">
+						<label for="firstName" class="col-md-2 col-form-label">First
+							Name</label>
+						<div class="col-md-10">
+							<input th:field="*{firstName}" type="text" class="form-control" id="firstName"
+								name="firstName" placeholder="First Name" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="lastName" class="col-md-2 col-form-label">Last
+							Name</label>
+						<div class="col-md-10">
+							<input th:field="*{lastName}" type="text" class="form-control" id="lastName"
+								name="lastName" placeholder="Last Name" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="areaCode" class="col-md-2 col-form-label">Contact
+							Tel.</label>
+						<div class="col-5 col-md-3">
+							<input th:field="*{areaCode}" type="text" class="form-control" id="areaCode"
+								name="areaCode" placeholder="Area code" />
+						</div>
+						<div class="col-7">
+							<input th:field="*{contactTel}" type="text" class="form-control" name="telNum"
+								placeholder="Telnumber" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="email" class="col-md-2 col-form-label">Email</label>
+						<div class="col-md-10">
+							<input th:field="*{email}" type="text" class="form-control" id="email" name="email"
+								placeholder="Email" />
+						</div>
+						<fieldset id="checkbox-yui_3_17_2_1_1581214924136_68491"
+							class="form-item field checkbox pl-3">
+
+							<legend class="title"> Preferred contact method </legend>
+
+							<div class="option">
+								<label><input type="checkbox"
+									name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+									value="Phone"> Phone</label>
+								<div>
+
+									<div class="option">
+										<label><input type="checkbox"
+											name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+											value="Text message"> Text message</label>
+									</div>
+
+									<div class="option">
+										<label><input type="checkbox"
+											name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+											value="Email"> Email</label>
+									</div>
+						</fieldset>
+					</div>
+					<div class="form-group row">
+						<div class="col offset-md-2">
+							May we contact you?
+							<div class="form-check form-check-inline">
+								<input type="radio" class="form-check-input" id="contactYes"
+									name="contactRadios" value="yes" /> <label for="contactYes"
+									class="form-check-label">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input type="radio" class="form-check-input" id="contactNo"
+									name="contactRadios" value="no" /> <label for="contactNo"
+									class="form-check-label">No</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="feedback" class="col-md-2 col-form-label">
+							Additional Information </label>
+						<div class="col-md-10">
+							<textarea th:field="*{additionalInformation}" class="frorm-control" id="feedback" name="feedback"
+								rows="8"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="offset-md-2 col-md-10">
+							<button type="submit" class="btn btn-primary">Submit
+								request</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-4 col-sm-2 offset-1">
+					<h5>Links</h5>
+					<ul class="list-unstyled">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="#">Sites</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-sm-5 text-center">
+					<h5>Social</h5>
+					<a class="btn btn-social-icon btn-instagram"
+						href="http://instagram.com/"><i class="fa fa-instagram"></i></a> <a
+						class="btn btn-social-icon btn-facebook"
+						href="http://facebook.com/"><i class="fa fa-facebook"></i></a> <a
+						class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+						class="fa fa-twitter"></i></a> <a
+						class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+						class="fa fa-youtube"></i></a>
+				</div>
+				<div class="col-sm-4 text-center">
+					<i class="fa fa-phone fa-lg text-primary"></i>Tel: 1-619-895-7484<br />
+					<i class="fa fa-envelope fa-lg text-primary"></i>Email:
+					ture.amina7484@gmail.com
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+
+	<script th:replace="scheduler/fragments/scriptLinks"></script>
+</body>
+
+</html>

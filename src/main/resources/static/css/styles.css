@@ -1,0 +1,48 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Verdana", cursive;
+}
+
+h2 {
+    color: #FFD700;
+}
+
+header h2 {
+    color: #800000;
+}
+
+footer {
+    background-image: linear-gradient(#E9967A, snow);
+    padding: 20px 0;
+}
+
+.jumbotron{
+    margin: 0;
+    padding: 10px;
+    background-image: linear-gradient(to left,#5637DD, #3046C5, #4169E1);
+    color: ghostwhite;
+    font-size: 10px;
+}
+
+.row-content {
+    padding: 50px 0;
+    border-bottom: 1px ridge;
+    min-height: 350px;
+}
+
+.navbar {
+    background-color: #9ACD32;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+
+/*.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}*/
