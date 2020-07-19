@@ -9,11 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class Scheduler {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "scheduler_Id")
 	private long Id;
 	
 	private String firstName;
@@ -37,8 +39,6 @@ public class Scheduler {
 
 	public Scheduler( String firstName, String lastName, String contactTel, String areaCode, String email,
 			String prefferedContactMethod, boolean mayWeContactYou, String additionalInformation) {
-//		super();
-		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contactTel = contactTel;
