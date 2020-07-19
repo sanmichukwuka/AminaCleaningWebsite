@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Edit Article</title>
+<link th:replace="scheduler/fragments/headLinks">
+<link rel="stylesheet" type="text/css" href="../../css/styles.css">
+</head>
+<body>
+	<div th:replace="scheduler/fragments/navbar"></div>
+	<div class="container-fluid">
+		<h3>Please use the form below to edit your appointments:</h3>
+		<form class="form-group"
+			th:action="@{/schedulers/} + ${scheduler.schedulerId} + @{/edit}"
+			th:method="put">
+			<div class="form-group row">
+				<label for="firstName" class="col-md-2 col-form-label">First
+					Name</label>
+				<div class="col-md-10">
+					<input th:field="*{firstName}" type="text" class="form-control"
+						id="firstName" name="firstName" placeholder="First Name" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="lastName" class="col-md-2 col-form-label">Last
+					Name</label>
+				<div class="col-md-10">
+					<input th:field="*{lastName}" type="text" class="form-control"
+						id="lastName" name="lastName" placeholder="Last Name" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="areaCode" class="col-md-2 col-form-label">Contact
+					Tel.</label>
+				<div class="col-5 col-md-3">
+					<input th:field="*{areaCode}" type="text" class="form-control"
+						id="areaCode" name="areaCode" placeholder="Area code" />
+				</div>
+				<div class="col-7">
+					<input th:field="*{contactTel}" type="text" class="form-control"
+						name="telNum" placeholder="Telnumber" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="email" class="col-md-2 col-form-label">Email</label>
+				<div class="col-md-10">
+					<input th:field="*{email}" type="text" class="form-control"
+						id="email" name="email" placeholder="Email" />
+				</div>
+				<fieldset id="checkbox-yui_3_17_2_1_1581214924136_68491"
+					class="form-item field checkbox pl-3">
+
+					<legend class="title"> Preferred contact method </legend>
+
+					<div class="option">
+						<label><input type="checkbox"
+							name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+							value="Phone"> Phone</label>
+						<div>
+
+							<div class="option">
+								<label><input type="checkbox"
+									name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+									value="Text message"> Text message</label>
+							</div>
+
+							<div class="option">
+								<label><input type="checkbox"
+									name="checkbox-yui_3_17_2_1_1581214924136_68491-field"
+									value="Email"> Email</label>
+							</div>
+				</fieldset>
+			</div>
+			<div class="form-group row">
+				<div class="col offset-md-2">
+					May we contact you?
+					<div class="form-check form-check-inline">
+						<input type="radio" class="form-check-input" id="contactYes"
+							name="contactRadios" value="yes" /> <label for="contactYes"
+							class="form-check-label">Yes</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input type="radio" class="form-check-input" id="contactNo"
+							name="contactRadios" value="no" /> <label for="contactNo"
+							class="form-check-label">No</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="feedback" class="col-md-2 col-form-label">
+					Additional Information </label>
+				<div class="col-md-10">
+					<textarea th:field="*{additionalInformation}" class="frorm-control"
+						id="feedback" name="feedback" rows="8"></textarea>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="offset-md-2 col-md-10">
+					<button type="submit" class="btn btn-primary">Submit
+						request</button>
+				</div>
+			</div>
+
+			<button class="btn btn-sm btn-warning" type="submit">Change
+				it</button>
+		</form>
+	</div>
+	<Script th:replace="scheduler/fragments/scriptLinks"></Script>
+</body>
+</html>
