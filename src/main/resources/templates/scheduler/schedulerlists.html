@@ -3,30 +3,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Scheduler List</title>
+<link th:replace="scheduler/fragments/headLinks">
 </head>
 <body>
-  <h3>All of the schedulers:</h3>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Genre</th>
-      <th>Date added</th>
-    </tr>
-    <div th:each="scheduler:${schedulers}">
-      <tr>
-        <td th:text="${scheduler.Id}"></td>
-        <td th:text="${scheduler.firstName}"></td>
-        <td th:text="${scheduler.lastName}"></td>
-        <td th:text="${scheduler.areaCode}"></td>
-        <td th:text="${scheduler.contactTel}"></td>
-        <td th:text="${scheduler.prefferedContactMethod}"></td>
-        <td th:text="${scheduler.mayWeContactYou}"></td>
-        <td th:text="${scheduler.additionalInformation}"></td>
-      </tr>
-    </div>
-  </table>
-  <a href="/">Add a scheduler</a>
+	<div th:replace="scheduler/fragments/navbar">
+		<div class="container-fluid">
+			<h1>Scheduler Appointment Lists</h1>
+			<div class="list-group">
+				<div th:each="scheduler:${schedulers}">
+					<a th:href="@{/schedulers/} + ${scheduler.schedulerid}"
+						class="list-group-item list-group-item-action">
+						<span th:text="${scheduler.firstName} + ${scheduler.lastName}"></span> By:
+						<span th:text="${scheduler.email}"></span>
+						</a>
+
+				</div>
+			</div>
+		</div>
+		<a href="/">Add a scheduler</a>
+	</div>
+	<script th:replace="scheduler/fragments/scriptLinks"></script>
 </body>
 </html>
