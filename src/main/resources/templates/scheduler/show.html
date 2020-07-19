@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Amina Cleaning Services</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Blog Article</title>
+<link th:replace="scheduler/fragments/headLinks">
+<link rel="stylesheet" type="text/css"
+  href="../../stylesheets/custom.css">
 </head>
 <body>
-	<h3>Scheduled cleaning:</h3>
-	<p th:text="${firstName}"></p>
-	<p th:text="${lastName}"></p>
-	<p th:text="${contactTel}"></p>
-	<p th:text="${areaCode}"></p>
-	<p th:text="${email}"></p>
-	<p th:text="${prefferedContactMethod}"></p>
-	<p th:text="${mayWeContactYou}"></p>
-	<p th:text="${additionalInformation}"></p>
-	<p th:text="${ScheduledDate}"></p>
+  <div th:replace="scheduler/fragments/navbar"></div>
+  <div class="container-fluid">
+    <h1>Client Requests:</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card text-light bg-info border-danger mb-3">
+          <div class="card-header text-dark" th:object="${scheduler}">
+            <h3 th:text="${scheduler.firstName} + ${scheduler.lastName}"></h3>
+          </div>
+          <div class="card-body">
+            <strong><span th:text="${scheduler.email}"></span></strong>
+            <p class="card-text" th:text="${scheduler.additionalInformation}" />
+          </div>
+          <div class="card-footer">
+            <a th:href="@{/schedulers/} + ${scheduler.schedulerId} + @{/edit}"
+              th:method="get"><button class="btn btn-warning">Edit Appointment
+              </button></a>
+            <a th:href="@{/schedulers/} + ${schedulers.schedulerId} + @{/delete}" 
+              th:method="delete"><button class="btn btn-danger">Delete Appointment</button>
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script th:replace="scheduler/fragments/scriptLinks"></script>
 </body>
 </html>
